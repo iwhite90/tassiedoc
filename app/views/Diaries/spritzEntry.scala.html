@@ -1,0 +1,41 @@
+@(diaryTitle: String, entry: Entry)
+
+@main("Diaries") {
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a href="/">Home</a></li>
+    <li class="active"><a href="@routes.Diaries.listDiaries">Diaries</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">tassiedoc</h3>
+</div>
+
+<div class="jumbotron" style="background-color: #BAE0FF;">
+  <h1>@diaryTitle</h1>
+  <p class="lead">@entry.formattedDate</p>
+  <h2 id="spritzContainer"></h2>
+</div>
+
+<script type="text/javascript">
+  var tokens,
+      i,
+      spritz = document.getElementById("spritzContainer");
+
+  var entries = "@entry.entries.flatMap(x => x + " ")";
+  tokens = entries.split(" ");
+  i = 0;
+  doSpritz();
+
+
+  function doSpritz() {
+    if (i < tokens.length) {
+      var word = tokens[i];
+      spritz.innerHTML = word;
+      i++;
+      var lastChar = word[word.length - 1],
+          delay = (lastChar == "." || lastChar == "!") ? 400 : 150;
+      setTimeout(doSpritz, delay);
+    }
+  }
+</script>
+}

@@ -1,0 +1,33 @@
+@(diary: Diary)
+
+@main("Diaries") {
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a href="/">Home</a></li>
+    <li class="active"><a href="@routes.Diaries.listDiaries">Diaries</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">tassiedoc</h3>
+</div>
+
+<div class="jumbotron" style="background-color: #BAE0FF;">
+  <h1>@diary.title</h1>
+  <p class="lead">@diary.formattedDate</p>
+</div>
+
+<div class="row marketing">
+  @for(entry <- diary.entries) {
+  <div class="col-md-4">
+    <a href="@routes.Diaries.diaryEntry(diary.date, diary.title, entry.date)">@entry.formattedDate</a>
+    <p>
+      @{
+        def trimString(str: String): String = {
+          if (str.length < 100) str else str.substring(0, 100).trim + "..."
+        }
+        trimString(entry.entries.head)
+      }
+    </p>
+  </div>
+  }
+</div>
+}

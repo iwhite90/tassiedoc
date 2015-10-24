@@ -1,0 +1,38 @@
+@(message: String)
+
+@main("Diaries") {
+
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="@routes.Diaries.listDiaries">Diaries</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">tassiedoc</h3>
+</div>
+
+<div class="jumbotron" style="background-color: #BAE0FF;">
+  <h1>Nothing here yet @message</h1>
+  <p class="lead">Try the diaries</p>
+</div>
+
+<div id="gameDiv" class="jumbotron">
+</div>
+
+<div class="footer">
+  <p>&copy; Ian White 2014</p>
+</div>
+
+<script src="@routes.Assets.at("javascripts/phaser.js")"></script>
+<script type="text/javascript">
+  var logo = '@routes.Assets.at("images/phaser.png")',
+      sky = '@routes.Assets.at("images/sky.png")',
+      star = '@routes.Assets.at("images/star.png")',
+      dude = '@routes.Assets.at("images/dude.png")',
+      platform = '@routes.Assets.at("images/platform.png")';
+</script>
+<script src='@routes.Assets.at("javascripts/game.js")'></script>
+
+</body>
+</html>
+}

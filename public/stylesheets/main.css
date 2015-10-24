@@ -1,0 +1,78 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  .container-narrow > hr {
+    margin: 40px 0 0 0;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .jumbotron {
+    margin: 5px 0;
+    text-align: center;
+    background-color:white;
+  }
+  .jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+    font-weight: bold;
+  }
+  .jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+
+  .marketing {
+    margin: 40px 0;
+  }
+
+  .marketing p + h4 {
+    margin-top: 28px;
+  }
+
+  .diary-btn {
+    margin-bottom: 20px;
+  }
+
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }

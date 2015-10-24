@@ -1,0 +1,14 @@
+@(userForm: Form[User], from: String, date: String, title: String, entryDate: String)
+
+@main("Login") {
+  <form class="form-signin" role="form" action="@routes.Application.doLogin" method="POST">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="text" name="name" class="form-control" placeholder="User Name" required autofocus>
+    <input type="password" name="password" class="form-control" placeholder="Password" required>
+    <input type="hidden" name="from" value="@from"/>
+    <input type="hidden" name="date" value="@date"/>
+    <input type="hidden" name="title" value="@title"/>
+    <input type="hidden" name="entryDate" value="@entryDate"/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+}

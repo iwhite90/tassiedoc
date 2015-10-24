@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /login                      controllers.Application.login
+POST    /doLogin                    controllers.Application.doLogin
+
+GET     /diaries                    controllers.Diaries.listDiaries
+GET     /diary/:date/:title         controllers.Diaries.listDiaryEntries(date: String, title: String)
+GET     /diary/:date/:title/entry/:entryDate    controllers.Diaries.diaryEntry(date: String, title: String, entryDate: String)
+GET     /diary/:date/:title/entry/:entryDate/spritz controllers.Diaries.spritz(date: String, title: String, entryDate: String)
+
+GET     /game                       controllers.Game.start
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

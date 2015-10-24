@@ -1,0 +1,28 @@
+@(diaryTitle: String, date: String, entry: Entry)
+
+@main("Diaries") {
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li><a href="/">Home</a></li>
+    <li class="active"><a href="@routes.Diaries.listDiaries">Diaries</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">tassiedoc</h3>
+</div>
+
+<div class="jumbotron" style="background-color: #BAE0FF;">
+  <h1>@diaryTitle</h1>
+  <p class="lead">@entry.formattedDate</p>
+  <a href="@routes.Diaries.spritz(date, diaryTitle, entry.date)"
+     class="btn btn-warning btn-lg"
+     role="button">Pow!</a>
+</div>
+
+<div class="row marketing">
+  <div class="col-md-12">
+    @for(p <- entry.entries) {
+      <p>@p</p>
+    }
+  </div>
+</div>
+}
